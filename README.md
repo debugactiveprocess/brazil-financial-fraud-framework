@@ -1,10 +1,27 @@
 # Matriz Brasileira de Fraudes Financeiras
 
-Projeto comunitário e independente para documentar táticas e técnicas de fraudes financeiras observadas no Brasil.
+Framework aberto para organizar **táticas e técnicas** usadas em fraudes e golpes financeiros no **contexto brasileiro**.
 
-O objetivo é criar uma base de conhecimento operacional, inspirada por frameworks como ATT&CK e Fight Fraud Framework, mas com foco local em golpes envolvendo PIX, boleto, WhatsApp, falsas centrais, falso motoboy, marketplaces, contas laranja, bets, cripto/P2P, maquininhas, consignado/INSS/FGTS e outros padrões brasileiros.
+Este repositório tem como objetivo oferecer uma base de conhecimento operacional que ajude equipes a:
 
-> **Aviso de independência:** este projeto não é afiliado, endossado ou mantido pela MITRE, pelo Center for Threat-Informed Defense ou pelo projeto Fight Fraud Framework. O projeto F3 foi usado apenas como referência arquitetural e metodológica.
+- mapear a **cadeia do golpe** (ponta a ponta);
+- padronizar linguagem entre prevenção, detecção, resposta e investigação;
+- priorizar controles e mitigação;
+- apoiar compartilhamento de inteligência **sem dados sensíveis**.
+
+Ele é inspirado por estruturas abertas como ATT&CK e Fight Fraud Framework, mas com foco local em padrões como **PIX**,
+**boleto**, **WhatsApp e redes sociais**, **falsas centrais**, **falso motoboy**, **marketplaces**, **contas laranja**,
+**bets**, **cripto/P2P**, **maquininhas**, **consignado/INSS/FGTS** e outros.
+
+> **Aviso de independência:** este projeto é independente e não é afiliado, endossado ou mantido pela MITRE, pelo Center for Threat-Informed Defense ou pelo projeto Fight Fraud Framework. Essas iniciativas são usadas apenas como referência conceitual/arquitetural.
+
+## Site (GitHub Pages)
+
+Quando o GitHub Pages estiver habilitado (via GitHub Actions), o site ficará em:
+
+```text
+https://debugactiveprocess.github.io/brazil-financial-fraud-framework/
+```
 
 ## Conteúdo inicial
 
@@ -71,12 +88,6 @@ Este repositório está preparado para publicar via GitHub Pages usando GitHub A
 2. Envie o código para a branch `main`.
 3. Em `Settings → Pages → Build and deployment`, selecione `Source: GitHub Actions`.
 4. A cada push na `main`, o workflow `.github/workflows/deploy.yml` fará o build e deploy.
-
-URL esperada:
-
-```text
-https://debugactiveprocess.github.io/brazil-financial-fraud-framework/
-```
 
 Se o repositório tiver outro nome, ajuste o campo `base` em `vite.config.js`.
 
