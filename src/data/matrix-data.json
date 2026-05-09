@@ -1,0 +1,484 @@
+[
+  {
+    "id": "BRFA0001",
+    "name": "Preparação",
+    "description": "Ações para criar, obter ou organizar recursos usados em golpes financeiros no Brasil, como contas laranja, chips, perfis falsos, anúncios, documentos, chaves PIX, QR Codes, maquininhas e infraestrutura de comunicação.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0002",
+    "name": "Aproximação",
+    "description": "Ações para iniciar contato, atrair ou posicionar a vítima em um canal controlado pelo fraudador, incluindo anúncios falsos, mensagens em redes sociais, ligações, grupos, marketplaces e contatos por WhatsApp.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0003",
+    "name": "Engenharia Social",
+    "description": "Ações para manipular confiança, urgência, medo, autoridade, ganância ou vínculo emocional da vítima, explorando linguagem, cultura, canais e hábitos brasileiros.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0004",
+    "name": "Comprometimento de Conta/Dispositivo",
+    "description": "Ações para obter controle ou influência sobre contas, identidades digitais, dispositivos, linhas telefônicas, apps bancários, mensageria ou sessões autenticadas.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0005",
+    "name": "Manipulação de Pagamento",
+    "description": "Ações para alterar, induzir, falsificar ou redirecionar instruções de pagamento, incluindo PIX, boleto, cartão, link de pagamento, QR Code, carteira digital e maquininhas.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0006",
+    "name": "Execução Financeira",
+    "description": "Ações que efetivamente resultam em transferência, compra, saque, contratação, liberação de produto, concessão de crédito, contestação abusiva ou outro impacto financeiro.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0007",
+    "name": "Cash-out/Lavagem",
+    "description": "Ações para converter, distribuir, ocultar ou lavar valores obtidos, usando contas laranja, bets, cripto/P2P, boletos, adquirentes, subadquirentes, saques ou compras de bens facilmente revendáveis.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0008",
+    "name": "Evasão/Encobrimento",
+    "description": "Ações para dificultar detecção, rastreio, bloqueio, recuperação de valores, atribuição ou investigação, incluindo troca de contas, documentos falsos, pressão para retirada de anúncio/conversa e fragmentação de valores.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRFA0009",
+    "name": "Revitimização",
+    "description": "Ações para explorar novamente a mesma vítima ou seus contatos após o primeiro golpe, incluindo recuperação falsa de valores, novas cobranças, chantagem, uso de listas de contatos e venda de dados.",
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z",
+    "tactic": true
+  },
+  {
+    "id": "BRF-0001",
+    "name": "Falso Comprovante de PIX",
+    "description": "O fraudador apresenta comprovante falso, editado ou reutilizado para convencer a vítima a liberar produto, serviço, reserva ou reembolso antes da confirmação real do crédito.\n\n**Nome global:** Fake Instant Payment Confirmation\n**Canais usados:** WhatsApp, marketplace, delivery, venda presencial, Instagram\n**Alvos comuns:** lojistas, autônomos, vendedores P2P\n**Pré-requisitos:** vítima aceita screenshot como prova\n\n**Sinais observáveis:**\n- pressão por liberação imediata\n- comprovante visual sem crédito liquidado\n- E2E/ID transacional inexistente ou reutilizado\n\n**Detecção:**\n- conciliar extrato antes da entrega\n- validar ID transacional e instituição\n- detectar imagens reutilizadas\n\n**Mitigação:**\n- liberar somente após crédito confirmado\n- treinar operação para ignorar screenshot\n- automatizar conciliação\n\n**Evidências úteis:** screenshot, extrato, ID/E2E PIX, conversa, horário\n**Relações com F3/MITRE ATT&CK:** F3: Fake Payment Confirmation; Transfer of Funds",
+    "tactics": [
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0002",
+    "name": "QR Code PIX Adulterado",
+    "description": "Substituição ou adulteração de QR Code estático/dinâmico para redirecionar o pagamento PIX a uma conta controlada pelo fraudador.\n\n**Nome global:** Payment QR Code Substitution\n**Canais usados:** impresso, WhatsApp, e-mail, site, balcão, eventos\n**Alvos comuns:** comércios, condomínios, eventos, doadores\n**Pré-requisitos:** vítima confere apenas valor ou nome parcial\n\n**Sinais observáveis:**\n- beneficiário divergente\n- QR Code colado sobre original\n- domínio ou arquivo alterado\n\n**Detecção:**\n- comparar recebedor esperado\n- inventariar QR Codes publicados\n- monitorar alterações em páginas de pagamento\n\n**Mitigação:**\n- usar QR dinâmico autenticado\n- exibir recebedor esperado\n- proteger materiais físicos\n\n**Evidências úteis:** imagem do QR, payload EMV, recebedor, logs de alteração\n**Relações com F3/MITRE ATT&CK:** F3: Payment QR Code Substitution",
+    "tactics": [
+      "BRFA0005"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0003",
+    "name": "Chave PIX Manipulada",
+    "description": "O fraudador induz a vítima a usar uma chave PIX incorreta ou parecida, explorando pressa, falso atendimento ou troca de mensagens.\n\n**Nome global:** Instant Payment Key Manipulation\n**Canais usados:** WhatsApp, SMS, e-mail, marketplace\n**Alvos comuns:** consumidores, pagadores recorrentes, empresas\n**Pré-requisitos:** pagador não valida titularidade\n\n**Sinais observáveis:**\n- chave recém-informada\n- titular incompatível\n- troca repentina de chave\n\n**Detecção:**\n- validar titular antes da confirmação\n- alertar troca de beneficiário recorrente\n\n**Mitigação:**\n- cadastro prévio de favorecidos\n- dupla checagem por canal confiável\n\n**Evidências úteis:** chave, titular, mensagens, comprovantes\n**Relações com F3/MITRE ATT&CK:** F3: Instant Payment Key Manipulation",
+    "tactics": [
+      "BRFA0005"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0004",
+    "name": "Falso Boleto",
+    "description": "Criação, alteração ou substituição de boleto para que o pagamento seja direcionado a beneficiário fraudulento.\n\n**Nome global:** Bank Slip Manipulation\n**Canais usados:** e-mail, buscadores, WhatsApp, portal falso\n**Alvos comuns:** consumidores, empresas, condomínios\n**Pré-requisitos:** vítima paga boleto sem conferir beneficiário\n\n**Sinais observáveis:**\n- linha digitável divergente\n- beneficiário diferente\n- desconto/urgência incomum\n\n**Detecção:**\n- validar beneficiário e banco emissor\n- monitorar páginas falsas indexadas\n\n**Mitigação:**\n- emitir por canais autenticados\n- educar para conferir beneficiário\n\n**Evidências úteis:** PDF, linha digitável, beneficiário, origem do arquivo\n**Relações com F3/MITRE ATT&CK:** F3: Bank Slip Manipulation",
+    "tactics": [
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0005",
+    "name": "Falsa Central Bancária",
+    "description": "Contato falso em nome de banco, cooperativa, fintech ou bandeira para induzir transações, instalação de app, fornecimento de códigos ou entrega de cartão.\n\n**Nome global:** Impersonated Financial Institution Support\n**Canais usados:** telefone, WhatsApp, SMS\n**Alvos comuns:** correntistas, idosos, alta renda\n**Pré-requisitos:** vítima acredita em autoridade bancária\n\n**Sinais observáveis:**\n- número spoofado\n- pedido de transação teste\n- orientação para não desligar\n\n**Detecção:**\n- detectar chamadas seguidas de transações incomuns\n- correlacionar alteração cadastral e pagamento\n\n**Mitigação:**\n- campanhas anti-transação-teste\n- callbacks oficiais no app\n- bloqueio contextual\n\n**Evidências úteis:** gravação, número, logs app, transações\n**Relações com F3/MITRE ATT&CK:** F3: Social Engineering; Authorized Push Payment Manipulation",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0003",
+      "BRFA0005"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0006",
+    "name": "Falso Motoboy",
+    "description": "Fraudador convence a vítima a entregar cartão físico, chip ou documentos a um suposto portador/motoboy enviado pelo banco.\n\n**Nome global:** Card Collection Courier Scam\n**Canais usados:** telefone, WhatsApp, visita presencial\n**Alvos comuns:** correntistas, idosos\n**Pré-requisitos:** vítima acredita que cartão será recolhido/cancelado\n\n**Sinais observáveis:**\n- coleta física após chamada\n- cartão cortado preservando chip\n- saques/compra próximos à coleta\n\n**Detecção:**\n- correlacionar chamada e uso presencial\n- alertar compras após bloqueio declarado\n\n**Mitigação:**\n- comunicar que banco não recolhe cartão\n- bloquear cartão via app/agência\n\n**Evidências úteis:** CFTV, endereço, cartão, chamadas, transações\n**Relações com F3/MITRE ATT&CK:** F3: Social Engineering; Card Fraud",
+    "tactics": [
+      "BRFA0003",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0007",
+    "name": "WhatsApp Clonado ou Tomado",
+    "description": "Tomada de conta de WhatsApp para pedir dinheiro a contatos, capturar grupos ou revitimizar rede de relacionamento.\n\n**Nome global:** Messaging Account Takeover\n**Canais usados:** WhatsApp, SMS, ligação\n**Alvos comuns:** usuários finais, pequenos negócios\n**Pré-requisitos:** código de verificação ou sessão comprometida\n\n**Sinais observáveis:**\n- pedidos urgentes a contatos\n- novo dispositivo vinculado\n- mudança de foto/nome\n\n**Detecção:**\n- alertar contatos por anomalia de mensagem\n- monitorar denúncias em massa\n\n**Mitigação:**\n- ativar verificação em duas etapas\n- não compartilhar códigos\n\n**Evidências úteis:** logs do WhatsApp, conversas, chaves PIX usadas\n**Relações com F3/MITRE ATT&CK:** F3: Account Takeover; Compromise Accounts",
+    "tactics": [
+      "BRFA0004",
+      "BRFA0009"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0008",
+    "name": "Golpe do Parente no WhatsApp",
+    "description": "Fraudador se passa por filho, parente ou amigo com número novo e solicita PIX urgente.\n\n**Nome global:** Family Impersonation Payment Scam\n**Canais usados:** WhatsApp, SMS\n**Alvos comuns:** familiares, idosos\n**Pré-requisitos:** vítima não confirma por ligação ou canal alternativo\n\n**Sinais observáveis:**\n- número novo\n- história de celular quebrado\n- urgência emocional\n\n**Detecção:**\n- detectar favorecidos novos e narrativa de urgência\n- limites adaptativos\n\n**Mitigação:**\n- verificação por chamada\n- atraso para primeiro PIX a favorecido novo\n\n**Evidências úteis:** conversa, número, chave PIX, titular\n**Relações com F3/MITRE ATT&CK:** F3: Authorized Push Payment Manipulation",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0003",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0009",
+    "name": "Falso Investimento",
+    "description": "Oferta fraudulenta de investimento com promessa de retorno alto, muitas vezes usando influenciadores falsos, grupos e plataformas simuladas.\n\n**Nome global:** Investment Scam\n**Canais usados:** Instagram, Telegram, WhatsApp, sites\n**Alvos comuns:** varejo, aposentados, investidores iniciantes\n**Pré-requisitos:** vítima acredita na rentabilidade ou prova social\n\n**Sinais observáveis:**\n- rentabilidade garantida\n- saques iniciais simulados\n- depósitos para múltiplas contas\n\n**Detecção:**\n- monitorar contas recebedoras relacionadas\n- identificar domínios e anúncios\n\n**Mitigação:**\n- alertas de promessa de retorno\n- bloqueio de anúncios fraudulentos\n\n**Evidências úteis:** anúncio, domínio, conversas, transações\n**Relações com F3/MITRE ATT&CK:** F3: Fraudulent Investment; Fake Website",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0003",
+      "BRFA0006",
+      "BRFA0007"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0010",
+    "name": "Golpe da Tarefa/Remuneração",
+    "description": "Promessa de renda por tarefas simples que evolui para depósitos, taxas ou aportes para liberar ganhos fictícios.\n\n**Nome global:** Task Job Scam\n**Canais usados:** WhatsApp, Telegram, Instagram\n**Alvos comuns:** desempregados, jovens, trabalhadores informais\n**Pré-requisitos:** vítima busca renda extra\n\n**Sinais observáveis:**\n- pagamentos pequenos iniciais\n- níveis VIP\n- taxas para sacar\n\n**Detecção:**\n- mapear grupos e contas recebedoras\n- detectar múltiplos depósitos crescentes\n\n**Mitigação:**\n- educar sobre taxa para receber\n- fricção em pagamentos para contas suspeitas\n\n**Evidências úteis:** prints de tarefas, grupo, depósitos, plataforma\n**Relações com F3/MITRE ATT&CK:** F3: Advance Fee Fraud; Social Engineering",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0003",
+      "BRFA0006",
+      "BRFA0009"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0011",
+    "name": "Falso Leilão",
+    "description": "Site ou anúncio falso de leilão usa logotipos e linguagem jurídica para induzir pagamento de caução, lance ou taxa.\n\n**Nome global:** Fake Auction\n**Canais usados:** Google Ads, Instagram, sites, WhatsApp\n**Alvos comuns:** compradores de veículos e imóveis\n**Pré-requisitos:** vítima acredita em leiloeiro/órgão legítimo\n\n**Sinais observáveis:**\n- domínio recente\n- pressão por caução\n- beneficiário pessoa física\n\n**Detecção:**\n- monitorar domínios similares\n- validar leiloeiro em junta comercial\n\n**Mitigação:**\n- consulta em fontes oficiais\n- não pagar fora da plataforma\n\n**Evidências úteis:** URL, anúncio, boleto/PIX, CNPJ/CPF\n**Relações com F3/MITRE ATT&CK:** F3: Fake Website; Payment Manipulation",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0012",
+    "name": "Marketplace com Intermediador Falso",
+    "description": "Fraudador se passa por comprador, vendedor ou plataforma e manipula fluxo de pagamento/entrega fora do ambiente oficial.\n\n**Nome global:** Marketplace Intermediary Impersonation\n**Canais usados:** OLX, Mercado Livre, WhatsApp\n**Alvos comuns:** compradores e vendedores P2P\n**Pré-requisitos:** negociação migra para canal externo\n\n**Sinais observáveis:**\n- pedido para sair da plataforma\n- e-mail falso de confirmação\n- frete/intermediador incomum\n\n**Detecção:**\n- detectar links/e-mails falsos\n- denúncias por telefone/chave PIX\n\n**Mitigação:**\n- manter pagamento e chat na plataforma\n- alertas contra intermediadores\n\n**Evidências úteis:** anúncio, chat, e-mail, comprovante\n**Relações com F3/MITRE ATT&CK:** F3: Fake Payment Confirmation; Social Engineering",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0003",
+      "BRFA0005"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0013",
+    "name": "Conta Laranja Alugada",
+    "description": "Recrutamento, aluguel ou compra de contas bancárias/fintech para receber e movimentar valores de golpes.\n\n**Nome global:** Mule Account Recruitment\n**Canais usados:** redes sociais, Telegram, comunidades locais\n**Alvos comuns:** jovens, vulneráveis, MEIs\n**Pré-requisitos:** pessoa aceita ceder conta por comissão\n\n**Sinais observáveis:**\n- múltiplos créditos seguidos de saídas\n- dispositivo/localidade incomum\n- conta recém-aberta\n\n**Detecção:**\n- modelos de mule account\n- correlação entre vítimas e cash-out\n\n**Mitigação:**\n- KYC reforçado\n- limites progressivos\n- educação sobre crime\n\n**Evidências úteis:** KYC, device, transações, conversas de recrutamento\n**Relações com F3/MITRE ATT&CK:** F3: Mule Account Recruitment; Transfer of Funds",
+    "tactics": [
+      "BRFA0001",
+      "BRFA0007",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0014",
+    "name": "Cash-out via Bet",
+    "description": "Valores de origem fraudulenta são depositados em plataformas de apostas para circular, fracionar, justificar ou sacar por outros meios.\n\n**Nome global:** Betting Platform Cash-out\n**Canais usados:** bets, PIX, contas laranja\n**Alvos comuns:** instituições financeiras, PSPs, bets\n**Pré-requisitos:** conta em bet aceita depósitos/saques rápidos\n\n**Sinais observáveis:**\n- depósito e saque sem padrão de jogo\n- múltiplas origens para mesma conta\n- fracionamento\n\n**Detecção:**\n- monitorar deposit/withdraw velocity\n- compartilhar sinais com PSP/bet\n\n**Mitigação:**\n- KYC e AML em bets\n- retenção por risco\n\n**Evidências úteis:** transações PIX, conta bet, histórico de apostas\n**Relações com F3/MITRE ATT&CK:** F3: Monetization; Conversion of Funds",
+    "tactics": [
+      "BRFA0007",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0015",
+    "name": "Cash-out via Cripto/P2P",
+    "description": "Conversão de valores de golpes em criptoativos por exchanges, P2P, OTC informal ou intermediários.\n\n**Nome global:** Cryptocurrency P2P Cash-out\n**Canais usados:** PIX, exchanges, Telegram, P2P\n**Alvos comuns:** vítimas, bancos, exchanges\n**Pré-requisitos:** conta recebedora acessa liquidez cripto\n\n**Sinais observáveis:**\n- PIX para brokers P2P\n- saques rápidos\n- múltiplas carteiras\n\n**Detecção:**\n- correlacionar contas com exchanges/P2P\n- identificar padrões de layering\n\n**Mitigação:**\n- KYC/AML robusto\n- bloqueio cooperativo rápido\n\n**Evidências úteis:** hashes, contas, conversas P2P, extratos\n**Relações com F3/MITRE ATT&CK:** F3: Convert to Cryptocurrency",
+    "tactics": [
+      "BRFA0007",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0016",
+    "name": "Fraude com Maquininha",
+    "description": "Uso indevido de POS, adquirentes ou subadquirentes para passar cartões, simular vendas, antecipar recebíveis ou movimentar valores.\n\n**Nome global:** POS/Acquirer Abuse\n**Canais usados:** maquininhas, links de pagamento, TEF\n**Alvos comuns:** adquirentes, lojistas, consumidores\n**Pré-requisitos:** credenciamento ou POS disponível\n\n**Sinais observáveis:**\n- MCC incompatível\n- ticket médio anômalo\n- chargebacks concentrados\n\n**Detecção:**\n- monitorar onboarding e TPV\n- analisar chargeback/antecipação\n\n**Mitigação:**\n- KYC de estabelecimento\n- limites por maturidade\n\n**Evidências úteis:** cadastro merchant, transações, chargebacks, geolocalização\n**Relações com F3/MITRE ATT&CK:** F3: Fraudulent Merchant Account",
+    "tactics": [
+      "BRFA0001",
+      "BRFA0006",
+      "BRFA0007"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0017",
+    "name": "Golpe em Delivery/Comércio Local",
+    "description": "Fraudes em pedidos locais com falso pagamento, retirada por terceiros, comprovante falso ou chargeback após entrega.\n\n**Nome global:** Local Commerce Delivery Scam\n**Canais usados:** WhatsApp, iFood-like, Instagram, balcão\n**Alvos comuns:** restaurantes, pequenos comércios\n**Pré-requisitos:** operação libera pedido sem conciliação\n\n**Sinais observáveis:**\n- comprovante antes do crédito\n- retirada por moto sem validação\n- endereço inconsistente\n\n**Detecção:**\n- conciliar pedidos e recebimentos\n- validar entregador/código\n\n**Mitigação:**\n- retirada com código\n- pagamento integrado\n- política anti-screenshot\n\n**Evidências úteis:** pedido, conversa, comprovante, CFTV, entrega\n**Relações com F3/MITRE ATT&CK:** F3: Fake Payment Confirmation",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0018",
+    "name": "Falso Sequestro",
+    "description": "Ameaça falsa e pressão emocional para obter transferência imediata sob alegação de sequestro ou risco a familiar.\n\n**Nome global:** Virtual Kidnapping Extortion\n**Canais usados:** telefone, WhatsApp\n**Alvos comuns:** famílias, idosos\n**Pré-requisitos:** vítima não consegue confirmar segurança do familiar\n\n**Sinais observáveis:**\n- ameaça em chamada contínua\n- pedido de PIX rápido\n- impedimento de desligar\n\n**Detecção:**\n- identificar múltiplos pagamentos sob coerção\n- palavras-chave em atendimento\n\n**Mitigação:**\n- orientar desligar e confirmar\n- limites e alertas para idosos\n\n**Evidências úteis:** número, gravação, PIX, relato\n**Relações com F3/MITRE ATT&CK:** F3: Extortion; Social Engineering",
+    "tactics": [
+      "BRFA0003",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0019",
+    "name": "Golpe do Consignado/INSS/FGTS",
+    "description": "Fraudador usa promessa de revisão, liberação, portabilidade ou saque de benefício para obter dados, taxas ou contratar crédito indevido.\n\n**Nome global:** Payroll/Benefit Loan Scam\n**Canais usados:** telefone, WhatsApp, SMS, correspondentes\n**Alvos comuns:** aposentados, pensionistas, trabalhadores\n**Pré-requisitos:** dados pessoais e benefício expostos\n\n**Sinais observáveis:**\n- contato ativo sobre benefício\n- taxa antecipada\n- contrato não reconhecido\n\n**Detecção:**\n- monitorar originação anômala\n- validar biometria/prova de vida\n\n**Mitigação:**\n- confirmação por canal oficial\n- bloqueio de consignado não solicitado\n\n**Evidências úteis:** contrato, gravação, IP/device, benefício\n**Relações com F3/MITRE ATT&CK:** F3: Identity Fraud; Loan Fraud",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0003",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0020",
+    "name": "Contestação/MED Abusivo",
+    "description": "Uso abusivo de contestação, MED ou chargeback após recebimento de produto/serviço ou em conluio para reaver valores indevidamente.\n\n**Nome global:** Instant Payment Refund Abuse\n**Canais usados:** PIX, cartões, atendimento\n**Alvos comuns:** lojistas, PSPs, consumidores\n**Pré-requisitos:** mecanismo de disputa disponível\n\n**Sinais observáveis:**\n- contestação logo após entrega\n- histórico repetitivo\n- evidências inconsistentes\n\n**Detecção:**\n- analisar padrão do reclamante\n- conciliar entrega e comunicação\n\n**Mitigação:**\n- coleta robusta de evidência\n- política de disputa baseada em risco\n\n**Evidências úteis:** protocolo MED, entrega, conversa, logs\n**Relações com F3/MITRE ATT&CK:** F3: Refund Abuse; Chargeback Fraud",
+    "tactics": [
+      "BRFA0006",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0021",
+    "name": "Link de Pagamento Falso",
+    "description": "Envio de link falso que simula checkout, banco, carteira ou adquirente para capturar pagamento, cartão ou credenciais.\n\n**Nome global:** Fake Payment Link\n**Canais usados:** SMS, WhatsApp, e-mail, redes sociais\n**Alvos comuns:** consumidores e lojistas\n**Pré-requisitos:** vítima clica fora do domínio oficial\n\n**Sinais observáveis:**\n- URL encurtada ou parecida\n- checkout sem HTTPS confiável\n- MCC/beneficiário estranho\n\n**Detecção:**\n- detecção de typosquatting\n- análise de links reportados\n\n**Mitigação:**\n- domínios oficiais claros\n- bloqueio de links maliciosos\n\n**Evidências úteis:** URL, HTML, pagamento, logs DNS\n**Relações com F3/MITRE ATT&CK:** F3: Fake Website; Phishing",
+    "tactics": [
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0022",
+    "name": "Instalação de Acesso Remoto",
+    "description": "Vítima é induzida a instalar app de acesso remoto ou compartilhamento de tela para que o fraudador opere app bancário ou colete códigos.\n\n**Nome global:** Remote Access Tool Social Engineering\n**Canais usados:** telefone, WhatsApp, lojas de app\n**Alvos comuns:** correntistas, empresas\n**Pré-requisitos:** vítima segue orientação de falso suporte\n\n**Sinais observáveis:**\n- app remoto instalado\n- sessão durante transação\n- permissões de acessibilidade\n\n**Detecção:**\n- detectar apps de risco no device\n- anomalia de toque/navegação\n\n**Mitigação:**\n- bloquear operação com screen sharing\n- alertas no app\n\n**Evidências úteis:** logs do dispositivo, app instalado, sessão bancária\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Remote Access Software; Abuse Accessibility Features",
+    "tactics": [
+      "BRFA0003",
+      "BRFA0004",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0023",
+    "name": "Troca de Chip/SIM Swap",
+    "description": "Transferência fraudulenta da linha telefônica da vítima para interceptar OTPs, recuperar contas e autorizar transações.\n\n**Nome global:** SIM Swap\n**Canais usados:** operadora, lojas, atendimento\n**Alvos comuns:** correntistas e usuários de carteiras\n**Pré-requisitos:** dados cadastrais suficientes\n\n**Sinais observáveis:**\n- perda súbita de sinal\n- troca de SIM antes de login\n- OTP via SMS usado\n\n**Detecção:**\n- integrar sinal de SIM swap\n- bloquear operações pós-troca\n\n**Mitigação:**\n- MFA não dependente de SMS\n- cooldown após troca de chip\n\n**Evidências úteis:** registro operadora, horários, OTPs, transações\n**Relações com F3/MITRE ATT&CK:** F3: MFA Interception; Account Takeover",
+    "tactics": [
+      "BRFA0004",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0024",
+    "name": "Uso de Documentos Falsos no Onboarding",
+    "description": "Criação de contas usando documentos falsos, adulterados, sintéticos ou de terceiros para receber valores e dificultar atribuição.\n\n**Nome global:** Synthetic/Forged Identity Onboarding\n**Canais usados:** apps bancários, fintechs, adquirentes\n**Alvos comuns:** PSPs, bancos, wallets\n**Pré-requisitos:** onboarding remoto vulnerável\n\n**Sinais observáveis:**\n- selfie/documento inconsistente\n- device repetido\n- endereço compartilhado\n\n**Detecção:**\n- biometria e prova de vida\n- grafo de dispositivos/dados\n\n**Mitigação:**\n- KYC em camadas\n- revisão manual por risco\n\n**Evidências úteis:** documentos, biometria, device, IP, cadastro\n**Relações com F3/MITRE ATT&CK:** F3: Create Fake Materials; Identity Fraud",
+    "tactics": [
+      "BRFA0001",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0025",
+    "name": "Anúncio Falso em Rede Social",
+    "description": "Anúncios pagos ou perfis falsos promovem produtos, investimentos, leilões, vagas ou benefícios inexistentes.\n\n**Nome global:** Social Media Malvertising Scam\n**Canais usados:** Instagram, Facebook, TikTok, Google Ads\n**Alvos comuns:** consumidores, investidores, desempregados\n**Pré-requisitos:** plataforma permite impulsionamento/alcance\n\n**Sinais observáveis:**\n- preço muito abaixo\n- perfil recém-criado\n- comentários bloqueados\n\n**Detecção:**\n- monitorar ads e landing pages\n- correlacionar denúncias\n\n**Mitigação:**\n- remoção rápida\n- verificação de anunciantes\n\n**Evidências úteis:** criativo, conta anunciante, URL, pagamentos\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Malvertising; Fake Website",
+    "tactics": [
+      "BRFA0001",
+      "BRFA0002"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0026",
+    "name": "Phishing de Gov.br/Banco",
+    "description": "Páginas e mensagens falsas simulam Gov.br, bancos, Receita, Detran ou benefícios para capturar credenciais e dados.\n\n**Nome global:** Brazilian Portal Credential Phishing\n**Canais usados:** SMS, e-mail, WhatsApp, anúncios\n**Alvos comuns:** cidadãos, MEIs, beneficiários\n**Pré-requisitos:** vítima acredita no órgão/instituição\n\n**Sinais observáveis:**\n- domínio parecido\n- pedido de senha/código\n- tema de multa/restituição\n\n**Detecção:**\n- detectar kits e domínios\n- monitorar credenciais comprometidas\n\n**Mitigação:**\n- MFA resistente a phishing\n- takedown e educação\n\n**Evidências úteis:** URL, kit, credenciais, logs\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Phishing; Credential Harvesting",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0004"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0027",
+    "name": "Falsa Recuperação de Valores",
+    "description": "Após golpe anterior, fraudador promete recuperar dinheiro mediante taxa, procuração, novo PIX ou dados adicionais.\n\n**Nome global:** Recovery Scam\n**Canais usados:** WhatsApp, telefone, e-mail\n**Alvos comuns:** vítimas recentes\n**Pré-requisitos:** dados da vítima circulam em listas\n\n**Sinais observáveis:**\n- contato menciona golpe anterior\n- taxa para recuperar\n- falso advogado/policial\n\n**Detecção:**\n- correlacionar vítimas com novos pagamentos\n- monitorar narrativas de recuperação\n\n**Mitigação:**\n- alertar vítimas no atendimento\n- nunca cobrar taxa de recuperação\n\n**Evidências úteis:** contato, taxa, dados usados, transações\n**Relações com F3/MITRE ATT&CK:** F3: Re-victimization; Advance Fee Fraud",
+    "tactics": [
+      "BRFA0009",
+      "BRFA0003",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0028",
+    "name": "Fragmentação de Valores",
+    "description": "Valores são divididos em múltiplas transações, contas, horários ou instituições para evitar limites, alertas e bloqueios.\n\n**Nome global:** Transaction Structuring\n**Canais usados:** PIX, TED, cartões, wallets\n**Alvos comuns:** bancos, PSPs, laranjas\n**Pré-requisitos:** várias contas/canais disponíveis\n\n**Sinais observáveis:**\n- muitos PIX abaixo de limite\n- fan-out/fan-in\n- sequência em curto período\n\n**Detecção:**\n- análise de grafo e velocity\n- detectar fan-out para laranjas\n\n**Mitigação:**\n- limites dinâmicos\n- bloqueio por rede\n\n**Evidências úteis:** extratos, contas relacionadas, horários\n**Relações com F3/MITRE ATT&CK:** F3: Defense Evasion; Transfer of Funds",
+    "tactics": [
+      "BRFA0007",
+      "BRFA0008"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0029",
+    "name": "Lavagem via Compra e Revenda",
+    "description": "Compra de bens líquidos ou revendáveis com valores fraudados para converter dinheiro em mercadoria e posterior revenda.\n\n**Nome global:** Resale of Goods\n**Canais usados:** e-commerce, lojas físicas, gift cards, eletrônicos\n**Alvos comuns:** varejo, marketplaces, vítimas\n**Pré-requisitos:** aceitação de pagamento fraudulento\n\n**Sinais observáveis:**\n- compra de alto valor\n- retirada rápida\n- múltiplos cartões/contas\n\n**Detecção:**\n- monitorar compra-retirada\n- anomalia de endereço/device\n\n**Mitigação:**\n- KYC para alto valor\n- retenção antifraude\n\n**Evidências úteis:** pedido, entrega, device, pagamento\n**Relações com F3/MITRE ATT&CK:** F3: Monetization; Conversion to Goods",
+    "tactics": [
+      "BRFA0007"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0030",
+    "name": "Coleta e Reuso de Listas de Contatos",
+    "description": "Após comprometer conta/dispositivo, fraudador coleta contatos para novos golpes, pedidos de PIX ou campanhas segmentadas.\n\n**Nome global:** Contact List Harvesting for Re-victimization\n**Canais usados:** WhatsApp, e-mail, redes sociais\n**Alvos comuns:** usuários e seus contatos\n**Pré-requisitos:** conta/dispositivo comprometido\n\n**Sinais observáveis:**\n- mensagens em massa\n- pedidos similares a vários contatos\n- exportação de contatos\n\n**Detecção:**\n- detectar envio anômalo\n- denúncias por rede de contatos\n\n**Mitigação:**\n- proteção de sessão\n- notificação de login novo\n- 2FA\n\n**Evidências úteis:** lista de contatos, mensagens, sessão, device\n**Relações com F3/MITRE ATT&CK:** F3: Compromise Accounts; Re-victimization",
+    "tactics": [
+      "BRFA0004",
+      "BRFA0009"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  }
+]

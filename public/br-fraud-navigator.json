@@ -1,0 +1,9 @@
+{
+  "name": "Matriz Brasileira de Fraudes Financeiras v0.1",
+  "versions": {
+    "layer": "4.5",
+    "navigator": "4.9"
+  },
+  "domain": "br-fraud",
+  "description": "Camada inicial da Matriz Brasileira de Fraudes Financeiras."
+}
