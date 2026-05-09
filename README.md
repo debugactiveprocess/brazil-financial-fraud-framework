@@ -19,7 +19,7 @@ Ele é inspirado por estruturas abertas como ATT&CK e Fight Fraud Framework, mas
 
 Quanto mais golpes e fraudes forem mapeados (com sinais observáveis, detecção e mitigação), mais a comunidade ganha: mais clareza, mais padronização e mais capacidade de prevenção e resposta.
 
-**Estamos aceitando contribuições.** Veja:
+**Contribuições.** Veja:
 
 - Como contribuir: **[CONTRIBUTIONS.md](CONTRIBUTIONS.md)**
 - Guia geral: **[CONTRIBUTING.md](CONTRIBUTING.md)**
@@ -27,15 +27,6 @@ Quanto mais golpes e fraudes forem mapeados (com sinais observáveis, detecção
 **Total de contribuidores (GitHub):**
 
 ![GitHub contributors](https://img.shields.io/github/contributors/debugactiveprocess/brazil-financial-fraud-framework)
-
-### Avatares dos contribuidores
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!--
-Para preencher automaticamente esta seção, recomendo usar a ferramenta "all-contributors".
-Até lá, você pode listar manualmente contribuidores aqui.
--->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Site (GitHub Pages)
 
@@ -75,43 +66,19 @@ https://debugactiveprocess.github.io/brazil-financial-fraud-framework/
 
 Cada técnica busca conter:
 
-- ID
-- nome em português
-- nome global em inglês
-- descrição
-- tática(s)
-- canais usados
-- alvos comuns
-- pré-requisitos
-- sinais observáveis
-- detecção
-- mitigação
-- evidências úteis
-- relações com F3/MITRE ATT&CK
-
-## Desenvolvimento local
-
-```bash
-npm install
-npm run dev
-```
-
-Build de produção:
-
-```bash
-npm run build
-```
-
-## GitHub Pages
-
-Este repositório está preparado para publicar via GitHub Pages usando GitHub Actions.
-
-1. Crie o repositório `brazil-financial-fraud-framework` no GitHub.
-2. Envie o código para a branch `main`.
-3. Em `Settings → Pages → Build and deployment`, selecione `Source: GitHub Actions`.
-4. A cada push na `main`, o workflow `.github/workflows/deploy.yml` fará o build e deploy.
-
-Se o repositório tiver outro nome, ajuste o campo `base` em `vite.config.js`.
+  - ID
+  - nome em português
+  - nome global em inglês
+  - descrição
+  - tática(s)
+  - canais usados
+  - alvos comuns
+  - pré-requisitos
+  - sinais observáveis
+  - detecção
+  - mitigação
+  - evidências úteis
+  - relações com F3/MITRE ATT&CK
 
 ## Dados
 
