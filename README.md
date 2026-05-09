@@ -15,6 +15,28 @@ Ele é inspirado por estruturas abertas como ATT&CK e Fight Fraud Framework, mas
 
 > **Aviso de independência:** este projeto é independente e não é afiliado, endossado ou mantido pela MITRE, pelo Center for Threat-Informed Defense ou pelo projeto Fight Fraud Framework. Essas iniciativas são usadas apenas como referência conceitual/arquitetural.
 
+## Contribuidores
+
+Quanto mais golpes e fraudes forem mapeados (com sinais observáveis, detecção e mitigação), mais a comunidade ganha: mais clareza, mais padronização e mais capacidade de prevenção e resposta.
+
+**Estamos aceitando contribuições.** Veja:
+
+- Como contribuir: **[CONTRIBUTIONS.md](CONTRIBUTIONS.md)**
+- Guia geral: **[CONTRIBUTING.md](CONTRIBUTING.md)**
+
+**Total de contribuidores (GitHub):**
+
+![GitHub contributors](https://img.shields.io/github/contributors/debugactiveprocess/brazil-financial-fraud-framework)
+
+### Avatares dos contribuidores
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!--
+Para preencher automaticamente esta seção, recomendo usar a ferramenta "all-contributors".
+Até lá, você pode listar manualmente contribuidores aqui.
+-->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Site (GitHub Pages)
 
 Quando o GitHub Pages estiver habilitado (via GitHub Actions), o site ficará em:
