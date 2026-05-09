@@ -1,96 +1,72 @@
 # Matriz Brasileira de Fraudes Financeiras
 
-Framework aberto para organizar **táticas e técnicas** usadas em fraudes e golpes financeiros no **contexto brasileiro**.
+A **Matriz Brasileira de Fraudes Financeiras** é uma base de conhecimento aberta de **táticas e técnicas** usadas por fraudadores no Brasil, derivada de observações e padrões recorrentes em golpes financeiros (por exemplo: PIX, boleto, WhatsApp/redes sociais, falsas centrais, marketplaces, contas laranja, bets, cripto/P2P, maquininhas e outros).
 
-Este repositório tem como objetivo oferecer uma base de conhecimento operacional que ajude equipes a:
+O objetivo é fornecer uma estrutura e taxonomia comum para descrever incidentes de fraude de forma consistente e apoiar **prevenção, detecção, resposta e investigação**.
 
-- mapear a **cadeia do golpe** (ponta a ponta);
-- padronizar linguagem entre prevenção, detecção, resposta e investigação;
-- priorizar controles e mitigação;
-- apoiar compartilhamento de inteligência **sem dados sensíveis**.
+> **Aviso de independência:** este projeto é comunitário e independente. Não é afiliado, endossado ou mantido pela MITRE, pelo Center for Threat-Informed Defense ou pelo projeto Fight Fraud Framework. Usamos iniciativas globais apenas como **referência conceitual**.
 
-Ele é inspirado por estruturas abertas como ATT&CK e Fight Fraud Framework, mas com foco local em padrões como **PIX**,
-**boleto**, **WhatsApp e redes sociais**, **falsas centrais**, **falso motoboy**, **marketplaces**, **contas laranja**,
-**bets**, **cripto/P2P**, **maquininhas**, **consignado/INSS/FGTS** e outros.
+### Sumário
 
-> **Aviso de independência:** este projeto é independente e não é afiliado, endossado ou mantido pela MITRE, pelo Center for Threat-Informed Defense ou pelo projeto Fight Fraud Framework. Essas iniciativas são usadas apenas como referência conceitual/arquitetural.
+- [Getting Started](#getting-started)
+- [Getting Involved](#getting-involved)
+- [Questions and Feedback](#questions-and-feedback)
+- [Notice](#notice)
 
-## Contribuidores
+## Getting Started
 
-Quanto mais golpes e fraudes forem mapeados (com sinais observáveis, detecção e mitigação), mais a comunidade ganha: mais clareza, mais padronização e mais capacidade de prevenção e resposta.
+O site hospeda os recursos do projeto. Links úteis:
 
-**Contribuições.** Veja:
+| Recurso | Descrição |
+| --- | --- |
+| [Web Site](https://debugactiveprocess.github.io/brazil-financial-fraud-framework/) | O site hospeda a matriz, páginas “Sobre”, metodologia e recursos públicos. |
+| [Matrix](https://debugactiveprocess.github.io/brazil-financial-fraud-framework/#/matrix) | Matriz visual com táticas (objetivos) e técnicas (ações observáveis) usadas por fraudadores. |
+| [About](https://debugactiveprocess.github.io/brazil-financial-fraud-framework/#/about) | Informações do projeto e como usar. |
+| [Metodologia](https://debugactiveprocess.github.io/brazil-financial-fraud-framework/#/about/methodology) | Princípios e metodologia: como modelamos táticas/técnicas e o que buscamos registrar. |
+| [Resources](https://debugactiveprocess.github.io/brazil-financial-fraud-framework/#/resources) | Downloads públicos (JSON export), referências e materiais. |
 
-- Como contribuir: **[CONTRIBUTIONS.md](CONTRIBUTIONS.md)**
-- Guia geral: **[CONTRIBUTING.md](CONTRIBUTING.md)**
+## Getting Involved
 
-**Total de contribuidores (GitHub):**
+Existem várias formas de se envolver e ajudar a comunidade antifraude brasileira:
+
+- **Revisar a matriz e sugerir técnicas faltantes.**
+  Principalmente técnicas observáveis do mundo real que ainda não estão representadas.
+- **Contribuir com melhorias (detecção/mitigação/evidências).**
+  Quanto mais golpes e fraudes forem mapeados com sinais observáveis, detecção e mitigação, **mais a comunidade ganha**.
+- **Divulgar o projeto.** Se você achar útil, compartilhe com colegas do setor.
+
+Guias:
+
+- [CONTRIBUTIONS.md](CONTRIBUTIONS.md) — guia rápido (PT-BR)
+- [CONTRIBUTING.md](CONTRIBUTING.md) — guia geral
+
+### Contribuidores (GitHub)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/debugactiveprocess/brazil-financial-fraud-framework)
 
-## Site (GitHub Pages)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!--
+Se você quiser preencher automaticamente esta seção, recomendo usar a ferramenta "all-contributors".
+-->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-Quando o GitHub Pages estiver habilitado (via GitHub Actions), o site ficará em:
+## Questions and Feedback
 
-```text
-https://debugactiveprocess.github.io/brazil-financial-fraud-framework/
-```
+Feedback e contribuições são bem-vindos.
 
-## Conteúdo inicial
+- Veja como contribuir: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Abra uma issue: https://github.com/debugactiveprocess/brazil-financial-fraud-framework/issues
 
-- 9 táticas brasileiras:
-  - Preparação
-  - Aproximação
-  - Engenharia Social
-  - Comprometimento de Conta/Dispositivo
-  - Manipulação de Pagamento
-  - Execução Financeira
-  - Cash-out/Lavagem
-  - Evasão/Encobrimento
-  - Revitimização
-- 30 técnicas brasileiras iniciais, incluindo:
-  - Falso Comprovante de PIX
-  - QR Code PIX Adulterado
-  - Falso Boleto
-  - Falsa Central Bancária
-  - Falso Motoboy
-  - WhatsApp Clonado ou Tomado
-  - Falso Investimento
-  - Golpe da Tarefa/Remuneração
-  - Conta Laranja Alugada
-  - Cash-out via Bet
-  - Cash-out via Cripto/P2P
-  - Fraude com Maquininha
+## Notice
 
-## Estrutura da técnica
+© 2026 Comunidade Matriz Brasileira de Fraudes Financeiras.
 
-Cada técnica busca conter:
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+file except in compliance with the License. You may obtain a copy of the License at
 
-  - ID
-  - nome em português
-  - nome global em inglês
-  - descrição
-  - tática(s)
-  - canais usados
-  - alvos comuns
-  - pré-requisitos
-  - sinais observáveis
-  - detecção
-  - mitigação
-  - evidências úteis
-  - relações com F3/MITRE ATT&CK
+http://www.apache.org/licenses/LICENSE-2.0
 
-## Dados
-
-Arquivos principais:
-
-- `src/data/matrix-data.json` — dados usados pela aplicação.
-- `public/br-fraud-v1.json` — export JSON público.
-- `public/br-fraud-stix.json` — placeholder STIX inicial.
-- `public/br-fraud-navigator.json` — placeholder Navigator Layer inicial.
-
-O script `scripts/bootstrap_brazil_framework.py` recria a versão inicial dos dados brasileiros.
-
-## Licença
-
-Licenciado sob Apache License 2.0, salvo indicação em contrário. O código base foi adaptado de projeto open source de referência conforme a licença original.
+Unless required by applicable law or agreed to in writing, software distributed under
+the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the specific language governing
+permissions and limitations under the License.

@@ -480,5 +480,44 @@
     "isAttack": false,
     "version": "0.1",
     "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0031",
+    "name": "Pesquisa em Sites Abertos/Domínios (OSINT)",
+    "description": "Fraudadores podem pesquisar fontes online abertas para obter informações sobre pessoas, empresas e contextos que apoiem planejamento e direcionamento de golpes. Isso pode incluir perfis em redes sociais, sites de empresas, domínios recém-criados, marketplaces, páginas de reclamação, dados expostos publicamente e outros recursos de OSINT para coletar detalhes como contatos, função/cargo, vínculos, hábitos e eventos recentes.\n\nNo contexto brasileiro, também pode envolver consulta a portais públicos (quando aplicável), diários oficiais, processos públicos, cadastros/consultas abertas, bases de CNPJ/MEI, informações de entrega/endereços vazadas, anúncios em redes sociais e perfis de atendimento. Essas informações podem ser usadas para construir pretextos convincentes (ex.: falsa central, falso suporte, golpe do parente), identificar vítimas de alto valor (ex.: dono/financeiro), escolher o canal de contato e habilitar técnicas subsequentes como phishing, tomada de conta, falsos boletos, links de pagamento e APP/PIX induzido.\n\n**Nome global:** Search Open Websites/Domains\n**Canais usados:** Web aberta, redes sociais, marketplaces, fóruns, buscadores\n**Alvos comuns:** consumidores, lojistas, times financeiros, prestadores, vendedores P2P\n\n**Sinais observáveis:**\n- acesso incomum a páginas de contato/FAQ/políticas (para coletar linguagem)\n- criação/uso de domínios parecidos (typosquatting)\n- coleta de informações públicas em massa (scraping)\n\n**Detecção:**\n- monitorar variações de domínio/marca\n- monitorar scraping/bots em páginas de contato/checkout\n- acompanhar menções e perfis falsos em redes sociais\n\n**Mitigação:**\n- reduzir exposição de dados e padronizar canais oficiais\n- autenticação e verificação de identidade em contatos sensíveis\n- monitoramento de brand/domain e remoção de perfis falsos\n\n**Evidências úteis:** logs de acesso web, domínios, prints de perfis falsos, histórico de anúncios\n**Relações com F3/MITRE ATT&CK:** ATT&CK T1593; F3: Reconnaissance",
+    "tactics": [
+      "BRFA0001"
+    ],
+    "subtechniques": [
+      "BRF-0031.001",
+      "BRF-0031.002"
+    ],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0031.001",
+    "name": "Levantamento em redes sociais e mensageria",
+    "description": "Coleta de informações em redes sociais (ex.: Instagram, Facebook, LinkedIn, TikTok) e mensageria (ex.: WhatsApp, Telegram) para identificar relacionamentos, rotina, fotos, contexto familiar e detalhes que permitam criar pretextos de engenharia social.\n\n**Nome global:** Search Open Websites/Domains: Social Media\n**Canais usados:** redes sociais, grupos, perfis públicos\n\n**Detecção:**\n- monitorar perfis falsos se passando por marca/empresa\n- monitorar campanhas de impersonação e anúncios fraudulentos\n\n**Mitigação:**\n- verificação de perfil oficial, selos, páginas de aviso\n- campanhas educativas e processos de takedown",
+    "tactics": [
+      "BRFA0001"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0031.002",
+    "name": "Levantamento em registros e fontes públicas",
+    "description": "Busca de informações em fontes públicas e registros abertos (quando aplicável) para enriquecer o contexto de alvo/empresa, validar dados e produzir narrativas convincentes (ex.: nome de sócios, endereço comercial, fornecedores, contratos, processos públicos).\n\n**Nome global:** Search Open Websites/Domains: Public Records\n**Canais usados:** web aberta, portais públicos, diários, consultas\n\n**Detecção:**\n- correlação entre pesquisa pública e tentativa de contato/engenharia social\n\n**Mitigação:**\n- hardening de processos de verificação no atendimento (não confiar em “dados públicos” como prova)\n- políticas de privacidade e minimização de exposição",
+    "tactics": [
+      "BRFA0001"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
   }
 ]
