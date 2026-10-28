@@ -130,9 +130,9 @@ class F3:
 
     def parse_data_files(self, f3_data):
         """Sets attributes from the F3 data."""
-        self.data_id = "F3"
-        self.data_name = "MITRE Fight Financial Fraud Framework"
-        self.data_version = "1.0"
+        self.data_id = "BRF"
+        self.data_name = "Matriz Brasileira de Fraudes Financeiras"
+        self.data_version = "0.1"
 
         if not isinstance(f3_data, list):
             raise ValueError(
@@ -230,11 +230,11 @@ class F3:
         stix_matrices = []
         tactic_refs = [t.id for t in stix_tactics]
         print(f"\tGenerated {len(tactic_refs)} tactic references for matrix")
-        matrix_uuid = uuid.uuid5(self.uuid_domain, "F3-matrix")
+        matrix_uuid = uuid.uuid5(self.uuid_domain, "BRF-matrix")
         stix_matrix_obj = AttackMatrix(
             id=f"x-mitre-matrix--{matrix_uuid}",
-            name="Fight Financial Fraud Matrix",
-            description=f"{self.data_id} matrix for Fight Financial Fraud",
+            name="Matriz Brasileira de Fraudes Financeiras",
+            description=f"{self.data_id} - Matriz Brasileira de Fraudes Financeiras",
             external_references=external_references,
             tactic_refs=tactic_refs,
             allow_custom=True,
@@ -245,7 +245,7 @@ class F3:
         stix_data_objects = (
             stix_tactics + stix_techniques + relationships + stix_matrices
         )
-        collection_uuid = uuid.uuid5(self.uuid_domain, "F3-collection")
+        collection_uuid = uuid.uuid5(self.uuid_domain, "BRF-collection")
         stix_collection_obj = AttackCollection(
             id=f"x-mitre-collection--{collection_uuid}",
             type="x-mitre-collection",
@@ -267,7 +267,7 @@ class F3:
         print(f"Created STIX collection object.")
         # JSON
         print("Bundling and serializing F3 data to JSON file...")
-        bundle_uuid = uuid.uuid5(self.uuid_domain, "F3-bundle")
+        bundle_uuid = uuid.uuid5(self.uuid_domain, "BRF-bundle")
         bundle = Bundle(
             id=f"bundle--{bundle_uuid}",
             objects=stix_data_objects
@@ -405,7 +405,7 @@ class F3:
             kill_chain_phases=kill_chain_phases,
             external_references=self.build_f3_external_references(t, f3_url),
             allow_custom=True,
-            x_mitre_platforms=["F3"],
+            x_mitre_platforms=["BR-Fraud"],
             created="2026-04-02T19:15:57.686Z",
             modified=t["lastModified"],
         )
@@ -426,7 +426,7 @@ class F3:
             kill_chain_phases=[],  # important: present, but empty
             external_references=self.build_f3_external_references(t, f3_url),
             allow_custom=True,
-            x_mitre_platforms=["F3"],
+            x_mitre_platforms=["BR-Fraud"],
             x_mitre_is_subtechnique=True,
             created="2026-04-02T19:15:57.686Z",
             modified=t["lastModified"],
@@ -467,21 +467,21 @@ if __name__ == "__main__":
         "-o",
         type=str,
         dest="output_filepath",
-        default="public/f3-stix.json",
+        default="public/br-fraud-stix.json",
         help="Output filepath for STIX JSON",
     )
     parser.add_argument(
         "--url",
         type=str,
         dest="f3_url",
-        default="https://ctid.mitre.org/fraud",
+        default="https://debugactiveprocess.github.io/brazil-financial-fraud-framework",
         help="URL to F3 website for Navigator item linking",
     )
     parser.add_argument(
         "--identity_name",
         type=str,
         dest="identity_name",
-        default="MITRE F3",
+        default="Matriz Brasileira de Fraudes Financeiras",
         help="Name of the creator identity",
     )
     args = parser.parse_args()
@@ -492,7 +492,7 @@ if __name__ == "__main__":
     with open(args.f3_data_filepath) as f:
         data = json.load(f)
 
-        f3 = F3(data, "mitre-f3")
+        f3 = F3(data, "br-fraud")
         f3.to_stix_json(
             output_filepath,
             args.f3_url,

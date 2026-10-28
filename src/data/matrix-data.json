@@ -482,6 +482,100 @@
     "lastModified": "2026-05-09T12:57:00.000Z"
   },
   {
+    "id": "BRF-0032",
+    "name": "Malware Bancário/Overlay (Mão Fantasma)",
+    "description": "Aplicativo malicioso instalado no dispositivo da vítima (disfarçado de app legítimo, atualização ou suporte) sobrepõe telas falsas ao app bancário, captura credenciais/OTP e pode operar a conta remotamente, caracterizando o golpe da 'mão fantasma'.\n\n**Nome global:** Mobile Banking Overlay Malware\n**Canais usados:** lojas de app não oficiais, links, APK por WhatsApp, falso suporte\n**Alvos comuns:** correntistas, usuários de carteiras e apps bancários\n**Pré-requisitos:** vítima instala app malicioso e concede permissões de acessibilidade/sobreposição\n\n**Sinais observáveis:**\n- permissões de acessibilidade/sobreposição recém-concedidas\n- transação fora do padrão de horário/dispositivo\n- tela travada durante operação\n- app de origem desconhecida instalado\n\n**Detecção:**\n- sinais de device risk (apps de risco, acessibilidade ativa durante transação)\n- anomalia comportamental de toque/navegação\n- correlacionar instalação recente com operação sensível\n\n**Mitigação:**\n- bloquear operação sensível com sobreposição/acessibilidade ativa\n- distribuição apenas por lojas oficiais e assinatura verificada\n- educação sobre APKs e falso suporte\n\n**Evidências úteis:** pacote/APK instalado, permissões, logs do app, device fingerprint, transações\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Overlay Malware; Input Capture; Remote Device Takeover",
+    "tactics": [
+      "BRFA0004",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0033",
+    "name": "Golpe do Aluguel/Imóvel Falso",
+    "description": "Anúncio falso de imóvel para alugar ou vender com preço atrativo induz a vítima a pagar caução, taxa de reserva ou primeiro aluguel antes de qualquer visita ou contrato válido.\n\n**Nome global:** Fake Rental Deposit Scam\n**Canais usados:** portais de imóveis, Marketplace, OLX, Instagram, WhatsApp\n**Alvos comuns:** locatários, estudantes, pessoas em mudança\n**Pré-requisitos:** vítima paga antes de visitar e validar imóvel e proprietário\n\n**Sinais observáveis:**\n- preço abaixo do mercado\n- proprietário 'viajando' ou impedido de mostrar\n- pressão por reserva imediata\n- recebedor pessoa física sem vínculo\n\n**Detecção:**\n- imagens reutilizadas de outros anúncios\n- mesmo recebedor em múltiplos anúncios/denúncias\n- domínio ou perfil recente\n\n**Mitigação:**\n- nunca pagar antes de visita e contrato\n- validar proprietário e matrícula do imóvel\n- pagar por meios rastreáveis e oficiais\n\n**Evidências úteis:** anúncio, conversas, comprovante/PIX, dados do recebedor\n**Relações com F3/MITRE ATT&CK:** F3: Fake Listing; Advance Fee Fraud",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0034",
+    "name": "Falsa Dívida/Negativação",
+    "description": "Fraudador alega dívida, negativação (Serasa/SPC), pendência na Receita ou bloqueio iminente para pressionar a vítima a pagar um acordo falso com urgência.\n\n**Nome global:** Debt and Credit-Restriction Threat Scam\n**Canais usados:** SMS, e-mail, WhatsApp, ligação\n**Alvos comuns:** consumidores endividados, MEIs, contribuintes\n**Pré-requisitos:** vítima teme restrição de crédito e não valida no canal oficial\n\n**Sinais observáveis:**\n- cobrança com urgência e desconto relâmpago\n- boleto/PIX para beneficiário divergente\n- dados pessoais usados para dar credibilidade\n\n**Detecção:**\n- beneficiário não corresponde ao credor legítimo\n- campanhas em massa com mesmo roteiro\n- links/boletos fora do domínio oficial\n\n**Mitigação:**\n- validar pendências nos canais oficiais (Serasa/SPC/gov.br)\n- não pagar acordo por link/boleto não solicitado\n- educação sobre falsas cobranças\n\n**Evidências úteis:** mensagem, boleto/linha digitável, beneficiário, protocolo\n**Relações com F3/MITRE ATT&CK:** F3: Impersonation; Payment Manipulation; Social Engineering",
+    "tactics": [
+      "BRFA0003",
+      "BRFA0005",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0035",
+    "name": "Encomenda Retida/Taxa Alfandegária",
+    "description": "Mensagem falsa informa que uma encomenda está retida (Correios/alfândega/transportadora) e exige pagamento de pequena taxa por link para liberação, capturando o pagamento e, por vezes, dados de cartão.\n\n**Nome global:** Parcel Customs Fee Scam\n**Canais usados:** SMS, e-mail, WhatsApp\n**Alvos comuns:** compradores online, público geral\n**Pré-requisitos:** vítima aguarda encomenda e clica em link de pagamento\n\n**Sinais observáveis:**\n- taxa de valor baixo com urgência\n- link encurtado ou parecido com o da transportadora\n- checkout pedindo dados de cartão\n\n**Detecção:**\n- typosquatting de domínios de transportadora\n- pico de cliques após disparo de SMS\n- beneficiário/merchant incompatível\n\n**Mitigação:**\n- rastrear apenas em canais oficiais da transportadora\n- não pagar taxas por link recebido\n- bloqueio e takedown de páginas falsas\n\n**Evidências úteis:** SMS/e-mail, URL, dados de pagamento, logs\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Smishing; Fake Website; Phishing",
+    "tactics": [
+      "BRFA0002",
+      "BRFA0006"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0036",
+    "name": "Pix por Engano/Falsa Devolução",
+    "description": "Fraudador envia ou simula um PIX 'por engano' e pressiona a vítima a devolver o valor para outra chave, explorando boa-fé; o crédito original pode ser estornado ou fraudulento, deixando a vítima no prejuízo e movimentando valores.\n\n**Nome global:** Accidental Transfer Return Scam\n**Canais usados:** WhatsApp, ligação, app bancário\n**Alvos comuns:** correntistas, pequenos negócios\n**Pré-requisitos:** vítima devolve manualmente para chave diferente da origem\n\n**Sinais observáveis:**\n- pedido para devolver a chave/conta diferente da origem\n- pressão emocional e urgência\n- crédito de origem suspeita ou contestada\n\n**Detecção:**\n- devolução para beneficiário distinto do pagador original\n- crédito seguido de saída rápida\n- uso de MED/contestação no crédito original\n\n**Mitigação:**\n- devolver somente pela função de devolução do próprio PIX\n- orientar a não transferir manualmente\n- reter análise em créditos contestados\n\n**Evidências úteis:** IDs/E2E PIX, pagador x recebedor, conversa, protocolo MED\n**Relações com F3/MITRE ATT&CK:** F3: Social Engineering; Transfer of Funds; Monetization",
+    "tactics": [
+      "BRFA0003",
+      "BRFA0006",
+      "BRFA0007"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0037",
+    "name": "Phishing de OTP em Tempo Real",
+    "description": "Página falsa intermedia o login da vítima em tempo real: enquanto a vítima digita credenciais e código de uso único, o fraudador os repassa imediatamente ao serviço legítimo para assumir a sessão e autorizar operações.\n\n**Nome global:** Real-time OTP Relay Phishing\n**Canais usados:** SMS, e-mail, anúncios, WhatsApp\n**Alvos comuns:** usuários de bancos, carteiras e portais\n**Pré-requisitos:** vítima insere credenciais e OTP em página controlada pelo fraudador\n\n**Sinais observáveis:**\n- login de dispositivo/IP novo logo após acesso a link\n- uso de OTP quase simultâneo em dois contextos\n- geolocalização incompatível (impossible travel)\n\n**Detecção:**\n- binding de dispositivo e detecção de proxy/relay\n- impossible travel e anomalia de sessão\n- domínios de phishing recém-registrados\n\n**Mitigação:**\n- MFA resistente a phishing (passkeys/FIDO2)\n- vinculação de sessão ao dispositivo\n- takedown rápido e alerta ao usuário\n\n**Evidências úteis:** URL/kit, horários de OTP, device/IP, logs de sessão\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Adversary-in-the-Middle; Phishing; MFA Interception",
+    "tactics": [
+      "BRFA0004",
+      "BRFA0005"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
+    "id": "BRF-0038",
+    "name": "Cartão Não Presente/Teste de Cartões",
+    "description": "Uso de dados de cartão obtidos por vazamento ou phishing em compras online (cartão não presente), frequentemente precedido de 'teste de cartões' com pequenas transações para validar números antes de compras maiores ou revenda.\n\n**Nome global:** Card-Not-Present Fraud and Card Testing\n**Canais usados:** e-commerce, gateways, assinaturas, gift cards\n**Alvos comuns:** lojistas online, adquirentes, portadores\n**Pré-requisitos:** dados de cartão disponíveis ao fraudador\n\n**Sinais observáveis:**\n- rajada de pequenas autorizações e negativas\n- muitos cartões de um mesmo device/IP\n- testes de BIN e falhas em sequência\n\n**Detecção:**\n- monitorar velocity e taxa de decline por device/IP\n- regras antifraude e 3-D Secure por risco\n- detectar BIN attack e padrões de teste\n\n**Mitigação:**\n- 3-D Secure e step-up por risco\n- rate limiting e device fingerprint\n- listas e scoring colaborativos\n\n**Evidências úteis:** logs de autorização, device/IP, BINs, chargebacks\n**Relações com F3/MITRE ATT&CK:** F3/ATT&CK: Card-Not-Present Fraud; Card Testing; Monetization",
+    "tactics": [
+      "BRFA0006",
+      "BRFA0007"
+    ],
+    "subtechniques": [],
+    "isAttack": false,
+    "version": "0.1",
+    "lastModified": "2026-05-09T12:57:00.000Z"
+  },
+  {
     "id": "BRF-0031",
     "name": "Pesquisa em Sites Abertos/Domínios (OSINT)",
     "description": "Fraudadores podem pesquisar fontes online abertas para obter informações sobre pessoas, empresas e contextos que apoiem planejamento e direcionamento de golpes. Isso pode incluir perfis em redes sociais, sites de empresas, domínios recém-criados, marketplaces, páginas de reclamação, dados expostos publicamente e outros recursos de OSINT para coletar detalhes como contatos, função/cargo, vínculos, hábitos e eventos recentes.\n\nNo contexto brasileiro, também pode envolver consulta a portais públicos (quando aplicável), diários oficiais, processos públicos, cadastros/consultas abertas, bases de CNPJ/MEI, informações de entrega/endereços vazadas, anúncios em redes sociais e perfis de atendimento. Essas informações podem ser usadas para construir pretextos convincentes (ex.: falsa central, falso suporte, golpe do parente), identificar vítimas de alto valor (ex.: dono/financeiro), escolher o canal de contato e habilitar técnicas subsequentes como phishing, tomada de conta, falsos boletos, links de pagamento e APP/PIX induzido.\n\n**Nome global:** Search Open Websites/Domains\n**Canais usados:** Web aberta, redes sociais, marketplaces, fóruns, buscadores\n**Alvos comuns:** consumidores, lojistas, times financeiros, prestadores, vendedores P2P\n\n**Sinais observáveis:**\n- acesso incomum a páginas de contato/FAQ/políticas (para coletar linguagem)\n- criação/uso de domínios parecidos (typosquatting)\n- coleta de informações públicas em massa (scraping)\n\n**Detecção:**\n- monitorar variações de domínio/marca\n- monitorar scraping/bots em páginas de contato/checkout\n- acompanhar menções e perfis falsos em redes sociais\n\n**Mitigação:**\n- reduzir exposição de dados e padronizar canais oficiais\n- autenticação e verificação de identidade em contatos sensíveis\n- monitoramento de brand/domain e remoção de perfis falsos\n\n**Evidências úteis:** logs de acesso web, domínios, prints de perfis falsos, histórico de anúncios\n**Relações com F3/MITRE ATT&CK:** ATT&CK T1593; F3: Reconnaissance",
