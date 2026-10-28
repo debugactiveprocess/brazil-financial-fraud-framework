@@ -1,9 +1,964 @@
 {
-  "name": "Matriz Brasileira de Fraudes Financeiras v0.1",
-  "versions": {
-    "layer": "4.5",
-    "navigator": "4.9"
-  },
-  "domain": "br-fraud",
-  "description": "Camada inicial da Matriz Brasileira de Fraudes Financeiras."
+    "name": "Matriz Brasileira de Fraudes Financeiras",
+    "versions": {
+        "attack": "17",
+        "navigator": "5.3.1",
+        "layer": "4.5"
+    },
+    "domain": "br-fraud",
+    "customDataURL": "https://raw.githubusercontent.com/debugactiveprocess/brazil-financial-fraud-framework/refs/heads/main/public/br-fraud-stix.json",
+    "description": "Base de conhecimento de t\u00e1ticas e t\u00e9cnicas usadas por fraudadores no Brasil. Projeto comunit\u00e1rio e independente.",
+    "filters": {
+        "platforms": [
+            "BR-Fraud"
+        ]
+    },
+    "sorting": 0,
+    "layout": {
+        "layout": "side",
+        "aggregateFunction": "average",
+        "showID": false,
+        "showName": true,
+        "showAggregateScores": false,
+        "countUnscored": false,
+        "expandedSubtechniques": "none"
+    },
+    "hideDisabled": false,
+    "techniques": [
+        {
+            "techniqueID": "BRF-0001",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0001",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0002",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0003",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0004",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0004",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0005",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0005",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0005",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0006",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0006",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0007",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0007",
+            "tactic": "revitimiza\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0008",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0008",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0008",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0009",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0009",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0009",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0009",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0010",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0010",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0010",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0010",
+            "tactic": "revitimiza\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0011",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0011",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0011",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0012",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0012",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0012",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0013",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0013",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0013",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0014",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0014",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0015",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0015",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0016",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0016",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0016",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0017",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0017",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0017",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0018",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0018",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0019",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0019",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0019",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0020",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0020",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0021",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0021",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0022",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0022",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0022",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0023",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0023",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0024",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0024",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0025",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0025",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0026",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0026",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0027",
+            "tactic": "revitimiza\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0027",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0027",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0028",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0028",
+            "tactic": "evas\u00e3o/encobrimento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0029",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0030",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0030",
+            "tactic": "revitimiza\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0032",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0032",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0033",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0033",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0033",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0034",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0034",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0034",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0035",
+            "tactic": "aproxima\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0035",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0036",
+            "tactic": "engenharia-social",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0036",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0036",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0037",
+            "tactic": "comprometimento-de-conta/dispositivo",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0037",
+            "tactic": "manipula\u00e7\u00e3o-de-pagamento",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0038",
+            "tactic": "execu\u00e7\u00e3o-financeira",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0038",
+            "tactic": "cash-out/lavagem",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0031",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "showSubtechniques": true,
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0031.001",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "color": "#FFFFFF"
+        },
+        {
+            "techniqueID": "BRF-0031.002",
+            "tactic": "prepara\u00e7\u00e3o",
+            "enabled": true,
+            "metadata": [],
+            "links": [],
+            "comment": "",
+            "color": "#FFFFFF"
+        }
+    ],
+    "gradient": {
+        "colors": [
+            "#ff6666ff",
+            "#ffe766ff",
+            "#8ec843ff"
+        ],
+        "minValue": 0,
+        "maxValue": 100
+    },
+    "legendItems": [
+        {
+            "label": "T\u00e9cnica BR-Fraud",
+            "color": "#FFFFFF"
+        }
+    ],
+    "metadata": [
+        {
+            "name": "br_fraud_stix_version",
+            "value": "0.1"
+        }
+    ],
+    "links": [],
+    "showTacticRowBackground": false,
+    "tacticRowBackground": "#dddddd",
+    "selectTechniquesAcrossTactics": true,
+    "selectSubtechniquesWithParent": false,
+    "selectVisibleTechniques": false
 }

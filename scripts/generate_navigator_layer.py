@@ -87,7 +87,7 @@ def generate_matrix_layer(
     attack_version="17",
     navigator_version="5.3.1",
     layer_version="4.5",
-    domain="f3-financial",
+    domain="br-fraud",
 ):
     collection = get_collection(stix_bundle)
     navigator_technique_objs = build_navigator_technique_objs_from_stix(stix_bundle)
@@ -98,16 +98,16 @@ def generate_matrix_layer(
     for technique in techniques:
         technique["color"] = color
 
-    layer_name = "F3 Matrix"
+    layer_name = "Matriz Brasileira de Fraudes Financeiras"
     layer_description = (
-        "Knowledge base of tactics, techniques, and procedures used by "
-        "financial fraud actors, see ctid.mitre.org/fraud"
+        "Base de conhecimento de táticas e técnicas usadas por fraudadores "
+        "no Brasil. Projeto comunitário e independente."
     )
 
     metadata = []
     if collection and collection.get("x_mitre_version"):
         metadata.append(
-            {"name": "f3_stix_version", "value": collection["x_mitre_version"]}
+            {"name": "br_fraud_stix_version", "value": collection["x_mitre_version"]}
         )
 
     layer = {
@@ -120,7 +120,7 @@ def generate_matrix_layer(
         "domain": domain,
         "customDataURL": custom_data_url,
         "description": layer_description,
-        "filters": {"platforms": ["F3"]},
+        "filters": {"platforms": ["BR-Fraud"]},
         "sorting": 0,
         "layout": {
             "layout": "side",
@@ -138,7 +138,7 @@ def generate_matrix_layer(
             "minValue": 0,
             "maxValue": 100,
         },
-        "legendItems": [{"label": "F3 technique", "color": color}],
+        "legendItems": [{"label": "Técnica BR-Fraud", "color": color}],
         "metadata": metadata,
         "links": [],
         "showTacticRowBackground": False,
@@ -148,7 +148,7 @@ def generate_matrix_layer(
         "selectVisibleTechniques": False,
     }
 
-    output_path = write_to_json_file(layer, output_dir, "f3-navigator.json")
+    output_path = write_to_json_file(layer, output_dir, "br-fraud-navigator.json")
     print(f"Navigator layer written to {output_path}")
     print(f"Included {len(techniques)} tactic-technique entries.")
 
@@ -161,7 +161,7 @@ if __name__ == "__main__":
         "-f",
         "--stix-file",
         dest="stix_filepath",
-        default="public/f3-stix.json",
+        default="public/br-fraud-stix.json",
         help="Path to F3 STIX bundle JSON",
     )
     parser.add_argument(
@@ -174,13 +174,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--custom-data-url",
         dest="custom_data_url",
-        default="https://raw.githubusercontent.com/center-for-threat-informed-defense/fight-fraud-framework/refs/heads/main/public/f3-stix.json",
+        default="https://raw.githubusercontent.com/debugactiveprocess/brazil-financial-fraud-framework/refs/heads/main/public/br-fraud-stix.json",
         help="Public URL to the F3 STIX bundle JSON used by Navigator",
     )
     parser.add_argument(
         "--domain",
         dest="domain",
-        default="f3-financial",
+        default="br-fraud",
         help="Navigator custom domain name",
     )
     parser.add_argument(
