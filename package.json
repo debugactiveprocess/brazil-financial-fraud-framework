@@ -1,6 +1,6 @@
 {
   "name": "brazil-financial-fraud-framework",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
